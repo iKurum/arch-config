@@ -1,6 +1,6 @@
 [colors]
 background = #b0222222
-background-alt = #222
+background-alt = #b0222222
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
@@ -10,7 +10,7 @@ alert = #bd2c40
 [bar/example]
 monitor = eDP1
 width = 100%
-height = 27
+height = 20
 radius = 6.0
 fixed-center = false
 background = ${colors.background}
@@ -19,44 +19,17 @@ line-size = 3
 line-color = #f00
 border-size = 4
 border-color = #00000000
-padding-left = 0
-padding-right = 2
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 3
 
-font-0 = ejaVu Sans Mono:style=Oblique
-font-1 = DejaVu Sans,DejaVu Sans Condensed:style=Condensed Bold Oblique,Bold Oblique
-font-2 = DejaVu Sans:style=Oblique
-font-3 = DejaVu Sans Mono:style=Bold Oblique
-font-4 = Font Awesome 5 Brands,Font Awesome 5 Brands Regular:style=Regular
-font-5 = Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid
-font-6 = Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular
+font-0 = DejaVu Serif:style=Italic
+font-1 = Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid
 
-modules-left = bspwm i3
-modules-center = date
-modules-right = mpd alsa eth wlan
+modules-left = i3
+modules-center = 
+modules-right = alsa eth wlan date
 
 tray-position = right
 tray-padding = 2
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -98,11 +71,11 @@ interface = wlp8s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = "  "
 format-connected-prefix-foreground = #b6a49b
-label-connected = %upspeed:5% %downspeed:5%
+label-connected = %upspeed:5%  %downspeed:5% 
 format-disconnected = <label-disconnected>
-label-disconnected = not connected
+label-disconnected = 
 label-disconnected-foreground = #66ffffff
 format-padding = 1
 
@@ -114,19 +87,23 @@ interval = 3.0
 format-connected = <label-connected>
 format-connected-prefix = "  "
 format-connected-prefix-foreground = #b6a49b
-label-connected = %upspeed:5% %downspeed:5%
+label-connected = %upspeed:5%  %downspeed:5% 
 format-disconnected = <label-disconnected>
-label-disconnected = not connected
+label-disconnected =
 label-disconnected-foreground = #66ffffff
 format-padding = 1
 
 [module/date]
 type = internal/date
-interval = 60
-date = %a %d %b
+interval = 1
+
+date =
+date-alt =   %a %d %b
+
 time = %l:%M %p
-label =    %date%      %time%
-;label =  %time%
+time-alt = %l:%M:%S %p
+
+label = %date% %time%
 format-padding = 1
 
 [module/alsa]
